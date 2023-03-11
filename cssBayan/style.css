@@ -75,12 +75,13 @@ h1 {
     cursor: pointer;
 }
 
-.mem__title {
+.mem__title_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     cursor: pointer;
+    color: blue;
 }
 
 .mem__title_text {
@@ -90,16 +91,62 @@ h1 {
     font-weight: 900;
 }
 
-.arrow_btn {
-    background-image: url(./assets/plus.png);
-    rotate: -90deg;
+.arrow {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: block;
+    transition: all 0.5s ease-in-out;
+    /* visibility: hidden; */
 }
 
-.mem__one_img {
+.mem__one_img,
+.mem__two_img,
+.mem__three_img,
+.mem__four_img,
+.mem__five_img {
+    display: inline-block;
     padding: 1rem 0;
-    width: 50%;
+    /* width: 50%; */
+    /* height: 50%; */
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* accordion */
+
+[hidden] {
+    display: none;
+}
+
+.mem__title_header:hover {
+    color: black;
+}
+
+.mem__wrapper:hover .arrow {
+    background-image: url(./assets/plus.svg);
+}
+
+.mem__wrapper:hover .mem__title_text {
+    color: #010101;
+}
+
+.mem__wrapper_item:hover .mem__one_img .mem__two_img{
     height: 50%;
 }
+
+label input[type="checkbox"]:checked + .mem__title_header + .mem__one_img {
+    height: 50%;
+}
+
+.mem__wrapper_item input[type="checkbox"]:checked + .mem__title_header .arrow {
+    background-image: url(./assets/cross.svg);
+}
+
+
+
 
 /* footer */
 
