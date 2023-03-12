@@ -81,7 +81,7 @@ h1 {
     align-items: center;
 
     cursor: pointer;
-    color: blue;
+    color: rgb(64, 64, 245);
 }
 
 .mem__title_text {
@@ -89,6 +89,10 @@ h1 {
 
     font-size: 1.6rem;
     font-weight: 900;
+}
+
+[hidden] {
+    display: none;
 }
 
 .arrow {
@@ -102,47 +106,47 @@ h1 {
     /* visibility: hidden; */
 }
 
-.mem__one_img,
-.mem__two_img,
-.mem__three_img,
-.mem__four_img,
-.mem__five_img {
+img {
     display: inline-block;
     padding: 1rem 0;
-    /* width: 50%; */
-    /* height: 50%; */
+    width: 0;
+    height: 0;
     cursor: pointer;
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 /* accordion */
 
-[hidden] {
-    display: none;
-}
 
 .mem__title_header:hover {
     color: black;
 }
 
 .mem__wrapper:hover .arrow {
-    background-image: url(./assets/plus.svg);
+    background-image: url(./assets/plus2.svg);
 }
+
+
 
 .mem__wrapper:hover .mem__title_text {
     color: #010101;
+    transition: all 0.5s ease;
 }
 
-.mem__wrapper_item:hover .mem__one_img .mem__two_img{
+/* .mem__title:checked .mem__img {
+    display: block
+} */
+
+
+.mem__input:checked ~ .mem__title img {
+    width: 50%;
     height: 50%;
+    transition: all 3s ease-out;
 }
 
-label input[type="checkbox"]:checked + .mem__title_header + .mem__one_img {
-    height: 50%;
-}
 
 .mem__wrapper_item input[type="checkbox"]:checked + .mem__title_header .arrow {
-    background-image: url(./assets/cross.svg);
+    background-image: url(./assets/cross4.svg);
 }
 
 
@@ -151,9 +155,9 @@ label input[type="checkbox"]:checked + .mem__title_header + .mem__one_img {
 /* footer */
 
 .footer__mem {
-    max-width: 70%;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0px 0.5rem 0px 0.5rem;
+    padding: 0px 20rem 0px 20rem;
 
     display: flex;
     justify-content: space-between;
