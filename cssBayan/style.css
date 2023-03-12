@@ -101,9 +101,8 @@ h1 {
     background-size: contain;
     width: 2.2rem;
     height: 2.2rem;
-    display: block;
-    transition: all 0.5s ease-in-out;
-    /* visibility: hidden; */
+    transition: all 0.5s;
+    filter: invert(100%);
 }
 
 img {
@@ -112,42 +111,52 @@ img {
     width: 0;
     height: 0;
     cursor: pointer;
-    overflow: hidden; 
+    overflow: hidden;
+    transition: all 0.5s 
 }
 
-/* accordion */
-
+/* hover */
 
 .mem__title_header:hover {
-    color: black;
-}
+    color: black; 
+} 
 
 .mem__wrapper:hover .arrow {
     background-image: url(./assets/plus2.svg);
+    filter: none;
 }
 
-
+.mem__wrapper_item:hover .arrow {
+    background-image: url(./assets/cross4.svg);
+}
 
 .mem__wrapper:hover .mem__title_text {
     color: #010101;
     transition: all 0.5s ease;
 }
 
-/* .mem__title:checked .mem__img {
-    display: block
-} */
+.mem__wrapper_item:hover img {
+    width: 60%;
+    height: 60%;
+    transition: all 1.5s ease-out;
+}
 
+/* checked */
+
+.mem__input:checked ~ label .mem__title_text {
+    color: #010101;
+}
+
+.mem__input:checked ~ label .arrow {
+    background-image: url(./assets/cross4.svg);
+}
 
 .mem__input:checked ~ .mem__title img {
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
     transition: all 3s ease-out;
 }
 
-
-.mem__wrapper_item input[type="checkbox"]:checked + .mem__title_header .arrow {
-    background-image: url(./assets/cross4.svg);
-}
 
 
 
