@@ -1,0 +1,235 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    background-color:#FFFFF0;
+}
+
+p {
+    width: auto;
+    overflow-wrap: break-word;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+                /* header */
+
+.header__mem {
+    margin: 0 auto;
+    max-width: 50%;
+    font-size: 2.6rem;
+    padding: 1rem 0 0 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+.mem__line {
+    width: 100%;
+    height: 1px;
+    background-color:darkgrey;
+}
+
+                 /* memes */
+
+.mem__wrapper {
+    max-width: 50%;
+    padding: 0 1rem;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mem__wrapper_item {
+    cursor: pointer;
+}
+
+.mem__title_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+    color: rgb(64, 64, 245);
+}
+
+.mem__title_text {
+    padding: 1rem 0;
+
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.button {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 2.2rem;
+    height: 2.2rem;
+    transition: all 0.5s ease;
+    filter: invert(100%);
+}
+
+.mem__img {
+    display: inline-block;
+    padding: 1rem 0;
+    cursor: pointer;
+     
+}
+
+.mem__img_pictures {
+    width: 0;
+    height: 0;
+    transition: all 0.5s ease; 
+}
+
+                /* hover */
+
+.mem__title_header:hover {
+    color: black; 
+} 
+
+.mem__wrapper:hover .button {
+    background-image: url(./assets/plus2.svg);
+    filter: invert(0);
+    transition: all 1.5s ease;
+}
+
+.mem__wrapper_item:hover .button {
+    background-image: url(./assets/cross4.svg);
+    /* transition: all 0.5s ease; */
+    filter: invert(0);
+}
+
+.mem__wrapper:hover .mem__title_text {
+    color: #010101;
+    transition: all 0.5s ease;
+}
+
+.mem__wrapper_item:hover .mem__img_pictures {
+    width: 100%;
+    height: 100%;
+}
+
+              /* checked */
+
+.mem__input:checked ~ label .mem__title_text {
+    color: #010101;
+}
+
+.mem__input:checked ~ label .button {
+    background-image: url(./assets/cross4.svg);
+    /* transition: all 1.5s ease; */
+}
+
+.mem__input:checked ~ label .mem__img_pictures {
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s ease;
+}
+
+.mem__title:active .mem__title_header {
+    color: rgb(248, 108, 108);
+}
+.mem__title:active .mem__img_pictures {
+    filter: opacity(0.5);
+}
+
+                /* footer */
+
+.footer__mem {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0px 33rem 0px 33rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1rem;
+    color: #010101;
+    background-color: darkgrey;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #030303;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-github {
+    display: flex;
+    align-items: center;
+}
+
+                 /* adaptiv */
+
+@media (max-width: 820px) {
+    .mem__wrapper {
+        max-width:90%;
+    }
+    .header__mem {
+        max-width: 90%;
+        font-size: 2rem;
+    }
+    .mem__title_text {
+        font-size: 1.2rem;
+    }
+    .footer__mem{
+        padding: 0px 3rem 0px 3rem;;
+    }
+    .mem__input:checked ~ label .mem__img_pictures {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .mem__wrapper {
+        max-width:100%;
+    }
+    .header__mem {
+        max-width: 90%;
+        font-size: 0.9rem;
+    }
+    .mem__title_text {
+        font-size: 1rem;
+    }
+    .footer__mem{
+        padding: 0px 0.6rem 0px 0.6rem;
+    }
+    .mem__input:checked ~ label .mem__img_pictures {
+        width: 90%;
+        height: 90%;
+    }
+}
