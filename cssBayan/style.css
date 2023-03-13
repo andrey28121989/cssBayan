@@ -93,6 +93,7 @@ h1 {
     width: 2.2rem;
     height: 2.2rem;
     transition: all 0.5s ease;
+    filter: invert(100%);
 }
 
 .mem__img {
@@ -116,12 +117,14 @@ h1 {
 
 .mem__wrapper:hover .button {
     background-image: url(./assets/plus2.svg);
+    filter: invert(0);
     transition: all 1.5s ease;
 }
 
 .mem__wrapper_item:hover .button {
     background-image: url(./assets/cross4.svg);
     /* transition: all 0.5s ease; */
+    filter: invert(0);
 }
 
 .mem__wrapper:hover .mem__title_text {
@@ -130,8 +133,8 @@ h1 {
 }
 
 .mem__wrapper_item:hover .mem__img_pictures {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
 }
 
               /* checked */
@@ -146,25 +149,17 @@ h1 {
 }
 
 .mem__input:checked ~ label .mem__img_pictures {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
     transition: all 1.5s ease;
 }
 
-/* .mem__input:checked ~ label .mem__img {
-    width: 60%;
-    height: 60%;
-    transition: all 1.5s ease;
-} */
-
-.mem__wrapper_item:active .mem__title_text {
-    color:rgb(225, 225, 240)
+.mem__title:active .mem__title_header {
+    color: rgb(248, 108, 108);
 }
-
-.mem__wrapper_item:active .mem__img_pictures {
-    background-color: #f1f15f;
+.mem__title:active .mem__img_pictures {
+    filter: opacity(0.5);
 }
-
 
                 /* footer */
 
